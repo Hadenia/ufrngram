@@ -1,48 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, Image, View, FlatList} from 'react-native';
 
 
 export default function Stories() {
-  const stories = [
-    {
-      id: 1,
-      nome: 'Perna',
-      src: require('../assets/imagens/pernalonga.png'),
-    },
-    {
-      id: 2,
-      nome: 'Taz',
-      src: require('../assets/imagens/taz.jpg'),
-    },
-    {
-      id: 3,
-      nome: 'Patolino',
-      src: require('../assets/imagens/patolino.jpg'),
-    },
-    {
-      id: 4,
-      nome: 'Piu Piu',
-      src: require('../assets/imagens/piupiu.jpg'),
-    },
-    {
-      id: 5,
-      nome: 'Frajola',
-      src: require('../assets/imagens/frajola.jpg'),
-    },
-    {
-      id: 6,
-      nome: 'Felicia',
-      src: require('../assets/imagens/felicia.png'),
-    },
+  const [stories, setStories] = useState([]);
 
-  ];
+  useEffect(function(){
+   async function getData(){
+       const response =  await fetch('https://mobile.ect.ufrn.br:3000/stories');
+       const storiesServidor = await response.json();
+       setStories(storiesServidor)
+    }
+    getData();
+  }, []);
 
-/*Retornar o item do array anterior*/
   
 function renderItem({item}){
     return <View style={styles.story}>
-        <Image source={item.src} style={styles.imgstory} />
-        <Text>{item.nome}</Text>
+        <Image source={{uri: item.imgPerfilUri}} style={styles.imgstory} />
+        <Text>{item.nomeUsuario}</Text>
       </View>
 }
 
