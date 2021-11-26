@@ -12,9 +12,11 @@ Projeto desenvolvido na Disciplina ECT2525 - Desenvolvimento para dispositivos m
 
 
 ### Adiçoes ###
-Na aula 5, foi apresentado o Estilo de Navegação Stack navigator e para sua utilização foi adicionar os pacotes:
+Na aula 5, foi apresentado o Stack Navigator e para sua utilização foi adicionado os seguintes pacotes:
 
+```
 npm add @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 npm add @react-navigation/stack
 npm add react-native-gesture-handler
+```
