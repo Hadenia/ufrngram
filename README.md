@@ -11,7 +11,7 @@ Projeto desenvolvido na Disciplina ECT2525 - Desenvolvimento para dispositivos m
 * Visual Studio Code
 
 
-### Adiçoes ###
+### Adições ###
 Na aula 5, foi apresentado o Stack Navigator e para sua utilização foi adicionado os seguintes pacotes:
 
 ```
