@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { TextInput } from 'react-native-gesture-handler';
 import AsyncStorage  from '@react-native-async-storage/async-storage';
 
-import HomeScreen from './HomeScreen';
+import LoggedTabNaviator from '../navigators/LoggedTabNavigator';
 
 export default function LoginScreen ({navigation}){
 
@@ -30,7 +30,7 @@ export default function LoginScreen ({navigation}){
         if (response.status === 200){
             const token = await response.text();
             await AsyncStorage.setItem('TOKEN:', token); //salva o token         
-            navigation.navigate(HomeScreen);
+            navigation.navigate(LoggedTabNaviator);
         
         } else {
             Alert.alert(
